@@ -36,6 +36,7 @@ public class VentanaPrincipal extends ApplicationFrame {
     JScrollPane scrollPaneTiempos,scrollPaneBloqueados;
     JLabel labelCajero;
     JLabel labelAccion;
+    JLabel semaforo;
 
     private JLabel labelContadorCiclo;
     public VentanaPrincipal(Modelo modelo) {
@@ -131,6 +132,15 @@ public class VentanaPrincipal extends ApplicationFrame {
         this.labelAccion.setFont(this.fontLabel);
         this.labelAccion.setHorizontalTextPosition(SwingConstants.CENTER);
         this.labelAccion.setText("Tiempo");
+        
+        this.semaforo = new JLabel();
+        this.semaforo.setBounds(350,730,300,40);
+        this.semaforo.setFont(this.fontLabel);
+        this.semaforo.setHorizontalTextPosition(SwingConstants.CENTER);
+        this.semaforo.setText("Seccion Critica Libre");
+        this.semaforo.setHorizontalAlignment(SwingConstants.CENTER);
+        this.semaforo.setOpaque(true);
+        this.semaforo.setBackground(Color.GREEN);
 
         this.labelContadorCiclo = new JLabel();
         this.labelContadorCiclo.setBounds(490, 940, 120, 40);
@@ -203,6 +213,7 @@ public class VentanaPrincipal extends ApplicationFrame {
 
         this.panelCola.add(this.labelCajero);
         this.panelTabla.add(this.labelAccion);
+        this.panelTabla.add(this.semaforo);
         this.panelTabla.add(this.labelContadorCiclo);
 
         this.add(panelCola);

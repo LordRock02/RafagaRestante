@@ -117,6 +117,8 @@ public class Modelo implements Cloneable{
                     procesoActual = listaOrdenadaTurnos.getProcesoCajero().getSiguiente();
                     procesoActual.setEstado("En ejecución");
                     procesoActual.setTiempoComienzo(contadorReloj);
+                    ventanaPrincipal.semaforo.setBackground(Color.RED);
+                    ventanaPrincipal.semaforo.setText("Seccion Critica Ocupada");
                     actualizarTabla(procesoActual);
                     System.out.println("\nLista a atender: ");
                     listaOrdenadaTurnos.imprimirLista();
@@ -185,7 +187,8 @@ public class Modelo implements Cloneable{
                     }
 
                     actualizarTabla(procesoActual);
-
+                    ventanaPrincipal.semaforo.setBackground(Color.GREEN);
+                    ventanaPrincipal.semaforo.setText("Seccion Critica Libre");
                 }
             }
         });
